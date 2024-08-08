@@ -56,4 +56,4 @@ gr.Interface(
     description=description,
     article=article,
     theme=gr.themes.Soft(),
-).launch(share=True)
+).launch()
