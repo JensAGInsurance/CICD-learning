@@ -17,7 +17,6 @@ eval:
 	cml comment create report.md
 
 update-branch:
-	git config --global credential.helper store	
 	git config --global user.name $(USER_NAME)
 	git config --global user.email $(USER_EMAIL)
 	git commit -am "Update with new results"
@@ -25,6 +24,7 @@ update-branch:
 
 hf-login: 
 	pip install -U "huggingface_hub[cli]"
+	git config --global credential.helper store
 	git pull origin update
 	git switch update
 	huggingface-cli login --token $(HF) --add-to-git-credential
