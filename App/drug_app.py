@@ -4,7 +4,7 @@ import skops.io as sio
 # path_skops = r"\\jpfile01\risk_ebhc\17 - Data Analytics\Projects\Risk Hypotheses\Test\Model\drug_pipeline.skops"
 # pipe = sio.load(path_skops, trusted=['numpy.dtype'])
 
-pipe = sio.load("./Model/drug_pipeline.skops", trusted=True)
+pipe = sio.load("./Model/drug_pipeline.skops", trusted=['numpy.dtype'])
 
 def predict_drug(age, sex, blood_pressure, cholesterol, na_to_k_ratio):
     """Predict drugs based on patient features.
