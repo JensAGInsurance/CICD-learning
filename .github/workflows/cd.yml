@@ -13,6 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Configure Git Credential Helper
+        run: |
+        git config --global credential.helper store
+        echo "https://${{ secrets.GITHUB_TOKEN }}:@github.com" > ~/.git-credentials
+
       - name: Set up environment variables
         run: echo "HF=${{ secrets.HF }}" >> $GITHUB_ENV
 
